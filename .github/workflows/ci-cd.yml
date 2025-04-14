@@ -1,0 +1,35 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - develop   # Ramas que activarán el CI cuando haya un push
+  pull_request:
+    branches:
+      - develop   # Ramas de pull request (si se hace PR a develop)
+
+jobs:
+  build:
+    runs-on: ubuntu-latest    # Usamos un entorno Ubuntu para ejecutar el flujo
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2   # Revisa el código de tu repo
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'   # Establece la versión de Node.js que necesitas
+
+      - name: Install dependencies
+        run: npm install   # Instala las dependencias de tu proyecto
+
+      - name: Run tests
+        run: npm test   # Ejecuta tus pruebas
+
+      - name: Deploy to production (opcional)
+        if: github.ref == 'refs/heads/develop'   # Verifica si el commit es en la rama `develop`
+        run: |
+          echo "Desplegando a producción..."
+          # Aquí va el comando o script para hacer el deploy
+          # Por ejemplo, usando algún servicio como Heroku, AWS, etc.
