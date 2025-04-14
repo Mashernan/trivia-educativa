@@ -1,28 +1,13 @@
-# Node.js
+# Node
 node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-dist/
-build/
 
-# Sistemas operativos
-.DS_Store  # macOS
-Thumbs.db  # Windows
+# Editor
+.vscode/
 
-# Archivos del entorno
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Entorno
 .env
 
-# IDEs y editores
-.vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace
-
-# Archivos temporales
-*.log
-*.tmp
-*.swp
-
-# Git
-.git/
