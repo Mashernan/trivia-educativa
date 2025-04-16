@@ -3,10 +3,11 @@ import questions from './data/questions.js';
 const questionContainer = document.getElementById('question-container');
 const optionsContainer = document.getElementById('options-container');
 const nextButton = document.getElementById('next-button');
-const restartButton = document.getElementById('restart-button');
+const scoreDisplay = document.getElementById('score');
 
-
+// Estado inicial
 let currentIndex = 0;
+let score = 0;
 
 function showQuestion() {
   const currentQuestion = questions[currentIndex];
@@ -33,30 +34,20 @@ function showQuestion() {
 }
 
 function checkAnswer(userAnswer) {
-  const currentQuestion = questions[currentIndex];
-  const correctAnswer = currentQuestion.answer;
-
-  const buttons = document.querySelectorAll('.option-button');
-  buttons.forEach(button => {
-    button.disabled = true;
-    const isCorrect = (button.textContent === correctAnswer) ||
-                      (currentQuestion.type === 'truefalse' && (button.textContent === 'Verdadero' ? true : false) === correctAnswer);
-
-    if (isCorrect) {
-      button.classList.add('correct');
-    } else if (button.textContent === userAnswer || 
-              (currentQuestion.type === 'truefalse' && (button.textContent === 'Verdadero' ? true : false) === userAnswer)) {
-      button.classList.add('incorrect');
-    }
-  });
-
-  if (userAnswer === correctAnswer) {
+  const correct = questions[currentIndex].answer;
+  if (userAnswer === correct) {
     score++;
-    scoreDisplay.textContent = `Puntaje: ${score}`;
+    alert('✅ ¡Correcto!');
+  } else {
+    alert('❌ Incorrecto. La respuesta correcta es: ' + correct);
   }
+
+  updateScore();
 }
 
-
+function updateScore() {
+  scoreDisplay.textContent = `Puntaje: ${score}`;
+}
 
 nextButton.onclick = () => {
   currentIndex++;
@@ -64,24 +55,28 @@ nextButton.onclick = () => {
     showQuestion();
   } else {
     questionContainer.textContent = '🎉 ¡Trivia finalizada!';
-    optionsContainer.innerHTML = `<p>Tu puntaje final es: ${score} / ${questions.length}</p>`;
+    optionsContainer.innerHTML = '';
     nextButton.style.display = 'none';
-    restartButton.style.display = 'inline-block';
-    
-    
+
+    // Botón para reiniciar
+    const restartButton = document.createElement('button');
+    restartButton.textContent = 'Reiniciar';
+    restartButton.className = 'option-button';
+    restartButton.onclick = restartTrivia;
+    optionsContainer.appendChild(restartButton);
   }
 };
-restartButton.onclick = restartQuiz;
 
-showQuestion();
-
-function restartQuiz() {
+function restartTrivia() {
   currentIndex = 0;
   score = 0;
-  scoreDisplay.textContent = 'Puntaje: 0';
+  updateScore();
   nextButton.style.display = 'inline-block';
-  restartButton.style.display = 'none';
   showQuestion();
 }
+
+showQuestion();
+updateScore(); // Inicializa puntaje en pantalla
+
 
 
