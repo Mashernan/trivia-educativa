@@ -16,4 +16,4 @@ Abre `index.html` en tu navegador o usa una extensión como Live Server.
 
 Usa ramas `feature/`, pull requests y revisiones entre miembros. ¡Sigue buenas prácticas! ✨
 
-⚠️ Nota: Nadie debe trabajar directamente sobre la rama `main`. Todas las funcionalidades deben desarrollarse en ramas `feature/` basadas en `develop`, y luego integrarse a través de Pull Requests revisados por al menos dos colaboradores.
+⚠️ Nota: Ojo, Nadie debe trabajar directamente sobre la rama `main`. Todas las funcionalidades deben desarrollarse en ramas `feature/` basadas en `develop`, y luego integrarse a través de Pull Requests revisados por al menos dos colaboradores.
