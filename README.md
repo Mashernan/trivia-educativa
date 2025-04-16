@@ -1,19 +1,18 @@
-# Trivia Educativa de Software
+# 🎓 Trivia Educativa de Software
 
-Este es un proyecto de trivia interactiva para aprender sobre programación, metodologías ágiles y buenas prácticas en desarrollo de software.
+**Trivia Educativa de Software** es una aplicación interactiva pensada para reforzar conocimientos sobre **programación**, **metodologías ágiles** y **buenas prácticas en desarrollo de software**. Ideal para estudiantes, equipos en formación o cualquier entusiasta del desarrollo.
 
-## Tecnologías
+---
 
-- HTML, CSS y JavaScript
-- Estructura modular con ES6
-- Git + GitFlow + GitHub Actions (en progreso)
+## 🚀 Tecnologías Utilizadas
 
-## Cómo ejecutarlo
+- **HTML5**, **CSS3**, **JavaScript (ES6+)**
+- Estructura modular basada en **módulos ES6**
+- Control de versiones con **Git**, flujo de trabajo con **GitFlow**
+- Automatización de integraciones con **GitHub Actions** *(en progreso)*
 
-Abre `index.html` en tu navegador o usa una extensión como Live Server.
+---
 
-## Contribuciones
+## ▶️ Cómo Ejecutar el Proyecto
 
-Usa ramas `feature/`, pull requests y revisiones entre miembros. ¡Sigue buenas prácticas! ✨
-
-⚠️ Nota: Ojo, Nadie debe trabajar directamente sobre la rama `main`. Todas las funcionalidades deben desarrollarse en ramas `feature/` basadas en `develop`, y luego integrarse a través de Pull Requests revisados por al menos dos colaboradores.
+Abre index.html en tu navegador o usa una extensión como Live Server.
