@@ -16,3 +16,4 @@ Abre `index.html` en tu navegador o usa una extensión como Live Server.
 
 Usa ramas `feature/`, pull requests y revisiones entre miembros. ¡Sigue buenas prácticas! ✨
 
+

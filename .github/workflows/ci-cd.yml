@@ -1,0 +1,29 @@
+name: Simple CI
+
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v2
+
+      - name: Verifica estructura del proyecto
+        run: |
+          echo "Mostrando archivos..."
+          ls -la
+
+      - name: Validar HTML, CSS o JS (opcional)
+        run: echo "Aquí podrías poner validaciones simples con scripts personalizados"
+
+      - name: ✅ Finaliza CI sin errores
+        run: echo "CI ejecutado correctamente sin usar npm"
+
